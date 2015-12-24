@@ -1,8 +1,12 @@
 <div class="">
 	<nav class="navbar navbar-dark navbar-fixed-top bg-primary bg-faded">
 		<div class="collapse navbar-toggleable-xs container" id="navbar-header">
-			<a class="navbar-brand" [routerLink]="['/Home']">NG2 Dribbble</a>
+			<a class="navbar-brand pull-xs-left" [routerLink]="['/Home']">NG2 Dribbble</a>
+            <div class="pull-xs-right">
+                <a href="https://github.com/zamamohammed/ng2-dribbble" class="btn btn-success-outline">Find on Github</a>
+            </div>
 		</div>
+        
 	</nav>
 	<router-outlet></router-outlet>
 </div>
