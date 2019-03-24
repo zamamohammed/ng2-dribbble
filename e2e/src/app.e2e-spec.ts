@@ -6,11 +6,8 @@ describe('workspace-project App', () => {
   let page: AppPage;
 
   beforeAll(() => {
-    page.navigateTo();
-  });
-
-  beforeEach(() => {
     page = new AppPage();
+    page.navigateTo();
   });
 
   afterEach(async () => {
