@@ -16,11 +16,6 @@ export function click(locator: ElementFinder, title: string, errorString?: strin
     locator.click();
 }
 
-
-export function navigateTo() {
-    return browser.get(browser.baseUrl) as Promise<any>;
-}
-
 export function count(locator: ElementArrayFinder, title: string) {
     console.log(`Counting ${title}`);
     return locator.count();
@@ -30,4 +25,8 @@ export function sleep(time: number, title = '') {
     const seconds = time / 1000;
     console.log('sleeping for', seconds, 's');
     browser.driver.sleep(time);
+}
+
+export function wait(locator: ElementFinder, title = '', time = 10000) {
+    browser.wait(waitFor.visibilityOf(locator), time, `timed out waiting to select ${title}`);
 }

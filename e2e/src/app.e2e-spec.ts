@@ -1,12 +1,12 @@
-import { AppPage } from './app.locators';
+import { AppPage } from './app.po';
 import { browser, logging } from 'protractor';
-import { navigateTo, count, click, sleep } from './shared/action';
+import { count, click, wait } from './shared/action';
 
 describe('workspace-project App', () => {
   let page: AppPage;
 
   beforeAll(() => {
-    navigateTo();
+    page.navigateTo();
   });
 
   beforeEach(() => {
@@ -32,9 +32,10 @@ describe('workspace-project App', () => {
   it('should click on first card', () => {
     const title = page.getFirstCardTitle().getText();
     click(page.getFirstCardTitle(), 'first card');
-    sleep(2000);
+    const heading = page.getBehancveDetailsPageHeading();
+    wait(heading, 'Behance details page header');
 
-    expect(page.getBehancveDetailsPageHeading().getText()).toBe(title);
+    expect(heading.getText()).toBe(title);
   });
 
 });
